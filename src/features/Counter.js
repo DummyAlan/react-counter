@@ -8,11 +8,14 @@ export default function Counter() {
     const onIncrease = () => {
         setNumber(number + 1);
     };
+    const onDecrease = () => {
+        setNumber(number - 1);
+    }
     return (
-        <div>Counter component
+        <div>
             <button onClick={onIncrease}>+</button>
             <span>{number}</span>
-            <button>-</button>
+            <button onClick={onDecrease}>-</button>
         </div>
     )
 }
