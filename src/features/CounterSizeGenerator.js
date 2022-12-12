@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 
-export default function CounterSizeGenerator() {
+export default function CounterSizeGenerator(props) {
+    const {updateSize2} =props;
     const [size, setSize] = useState(0);
     const onSizeChange = (event) => {
-        console.log(event.target.value);
         const inputValue = event.target.value;
         const sizeValue = inputValue.length === 0 ? 0 : parseInt(inputValue);
         setSize(sizeValue);
+        updateSize2(sizeValue);
     };
 
   return (

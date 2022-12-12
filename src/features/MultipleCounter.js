@@ -1,12 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import CounterGroup from './CounterGroup'
 import CounterSizeGenerator from './CounterSizeGenerator'
 
 export default function MultipleCounter() {
+    const [size, setSize] = useState(0);
+
+    const updateSize = (sizeNumber) => {
+        console.log(sizeNumber);
+        setSize(sizeNumber);
+    }
   return (
     <div>
-        <CounterSizeGenerator/>
-        <CounterGroup size={3}/>
+        <CounterSizeGenerator updateSize2 = {updateSize}/>
+        <CounterGroup size={size}/>
     </div>
   )
 }
