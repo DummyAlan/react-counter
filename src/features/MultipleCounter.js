@@ -10,15 +10,21 @@ export default function MultipleCounter() {
     const updateSize = (sizeNumber) => {
         console.log(sizeNumber);
         setSize(sizeNumber);
+        resetSum();
+        
     }
 
     const updateSum = (change) => {
-      setSize(sum +change);
+      setSum(sum +change);
+    }
+
+    const resetSum = () => {
+      setSum(0);
     }
   return (
     <div>
         <CounterSizeGenerator updateSize2 = {updateSize}/>
-        <CounterGroupSum />
+        <CounterGroupSum sum={sum} />
         <CounterGroup size={size} updateSum={updateSum}/>
     </div>
   )
